@@ -1,12 +1,8 @@
 import json
 import os
 
-DB_FILE = "db/users.json"
-
-def init_db():
-    if not os.path.exists(DB_FILE):
-        with open(DB_FILE, "w") as f:
-            json.dump([], f)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_FILE = os.path.join(BASE_DIR, "quiz_data.json")
 
 def get_user(username, password):
     with open(DB_FILE, "r") as f:
