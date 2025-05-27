@@ -1,12 +1,17 @@
 import json
 import os
 
+
 DB_FILE = "db/users.json"
 
 def init_db():
+    # Ensure folder exists
+    os.makedirs(os.path.dirname(DB_FILE), exist_ok=True)
+
     if not os.path.exists(DB_FILE):
         with open(DB_FILE, "w") as f:
             json.dump([], f)
+
 
 def get_user(username, password):
     with open(DB_FILE, "r") as f:
