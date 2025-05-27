@@ -4,9 +4,13 @@ import os
 DB_FILE = "db/users.json"
 
 def init_db():
+    """Ensure the DB file exists and is initialized."""
     if not os.path.exists(DB_FILE):
         with open(DB_FILE, "w") as f:
             json.dump([], f)
+
+def get_user(username, password):
+    with open(DB_FILE, "r") as f:
         users = json.load(f)
     for user in users:
         if user["username"] == username and user["password"] == password:
