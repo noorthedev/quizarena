@@ -1,7 +1,8 @@
 import streamlit as st
+from db.db import init_db
 from auth.auth import login, register
 from game.game_logic import start_game
-from db.db import init_db
+
 
 init_db()
 
