@@ -70,4 +70,5 @@ Developers building Streamlit apps
 Hackathon or startup MVPs
 
 👨‍💻 Author
+
 Developed by [Anum Rajput] as a demo of Streamlit + Python OOP.
